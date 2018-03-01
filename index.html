@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo de API Mi Bici</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="demo-map.js"></script>
+    </head>
+
+    <body>
+            <h1>Mapa de estaciones Mi Bici</h1>
+            
+            <div class="main">
+                <div id="map" class="map"></div>
+                <div class="container">
+
+                    <select id="stations" class="stationsList">
+                        <option value="0">-- Seleccione una estación --</option>
+                    </select>
+
+                    <p id="infoStation" class="infoStation">
+                        Seleccione una estación para mostrar su información.
+                    </p>
+                </div>
+            </div>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL3XT2yzitrtkuAzUjHXpVrYJFnZjyIq4&callback=initMap">
+    </script>
+    </body>
+</html>
