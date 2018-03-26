@@ -29,6 +29,20 @@ $(document).ready(function() {
         map.setZoom(18);
 
         // TODO: Mostrar número de bicicletas disponibles
+        $.ajax({
+            url: 'https://guad.publicbikesystem.net/ube/gbfs/v1/en/station_status',
+            method: 'GET',
+            success: function(result) {
+                estaciones = result['data']['stations'];
+
+                for (var i=0; i<estaciones.length; i++) {
+                    if (estaciones[i]['station_id'] == selectedId) {
+                        $('#infoStation').html('Número de bicis disponibles en este puerto: ' + estaciones[i]['num_bikes_available']);
+                        break;
+                    }
+                }
+            }
+        });
 
     });
 
